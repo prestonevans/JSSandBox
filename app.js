@@ -308,4 +308,31 @@ console.log(
 	}, 0)
 );
 
-const a = [ 1, 2, 3, 4, 5 ];
+const ab = [ 1, 2, 3, 4, 5 ];
+console.log(ab.includes(3));
+
+let fname = 'Preston';
+let lname = 'Evans';
+console.log(`${fname} ${lname}`);
+
+// const user = new User('Preston', 31);
+// console.log(user.name, user.age);
+
+// function User(name, age) {
+// 	this.name = name;
+// 	this.age = age;
+// }
+class User {
+	constructor(name, age) {
+		this.name = name;
+		this.age = age;
+	}
+	printName() {
+		console.log(this.name);
+	}
+}
+const user1 = new User('Preston', 31);
+console.log(User);
+user1.printName();
+const user2 = new User('Justin', 41);
+user2.printName();

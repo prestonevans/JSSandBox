@@ -1,338 +1,161 @@
-// // let printName = (name) => {
-// // 	console.log(name);
-// // };
-// // printName('Preston');
+// class Test {
+// 	constructor(name) {
+// 		this.name = name;
+// 	}
+// 	shout() {
+// 		console.log(this);
+// 	}
+// }
 
-// // let printHi = (name) => `Hi ${name}`;
+// const user = new Test('Preston');
 
-// // console.log(printHi('Preston'));
+// user.shout();
 
-// // function func(x, callback) {
-// // 	callback(x);
-// // }
-// // func(10, (x) => console.log(x));
+// const user1 = new Test('Justin');
 
-// // console.log('hello');
+// user1.shout();
 
-// // let p = document.querySelector('p');
-// // document.body.innerHTML;
-// // p.innerHTML = 'test';
+// const user2 = Test;
 
-// // console.log('hello');
+// console.log(user2);
 
-// // console.log('hello');
+// const user3 = new user2('Lard');
 
-// // console.log('test');
+// console.log(user3.shout());
+// console.log(this);
 
-// // let test = document.querySelectorAll('p');
+// console.log(window);
 
-// // console.log(test);
+// window.addEventListener('resize', () => {
+// 	console.log('What did you just do????');
+// });
 
-// // console.log(sum(1, 2));
-// // console.log(sumArrow(1, 2));
-// // function sum(a, b) {
-// // 	return a + b;
-// // }
-// // sumStandard(1, 2);
+// console.log(document);
 
-// // let sumArrow = (a, b) => {
-// // 	return a + b;
-// // };
+// const p = document.createElement('p');
+// p.innerText = 'Test Mother Trucker';
+// document.body.append(p);
 
-// // let a = 1;
-// // console.log(a);
-// // function sayHi(name) {
-// // 	a = 4;
-// // 	let result = `Hi ${name} ${a}`;
-// // 	console.log(result);
-// // }
-// // console.log(result);
+// document.querySelector('#div-id').innerHTML = 'Got you';
+// document.querySelector('.div-class').innerHTML = 'Hahahaha';
 
-// // sayHi('Preston');
+// const data = document.querySelector('[data-test]');
+// data.innerHTML = 'Mehehehaheha I got you';
 
-// // function print(variable) {
-// // 	return function func(variable2) {
-// // 		console.log(variable2);
-// // 		console.log(variable);
-// // 	};
-// // }
+// let div = Array.from(document.querySelectorAll('.div-class'));
 
-// // let a = print(1);
-// // console.log(a(6));
+// div.map((el) => (el.innerHTML = 'sup'));
 
-// // let a = 1;
+// const input = (document.querySelector('input').value = 'Yep yep');
 
-// // console.log(a);
+// const btn = document.querySelector('[data-button]');
+// const input = document.querySelector('input');
+// const form = document.querySelector('form');
 
-// // for (var a = 0; a < 10; a++) {}
-// // console.log(a);
+// form.addEventListener('submit', (e) => {
+// 	e.preventDefault();
+// 	console.log(input.value);
+// 	input.value = null;
+// });
 
-// // {
-// // 	let a = 20;
-// // }
+// input.addEventListener('input', (e) => {
+// 	console.log(e.target.value === '' ? (input.style.borderColor = 'red') : (input.style.borderColor = 'green'));
+// });
 
-// // const a = 22;
+// function printClick() {
+// 	console.log('clicked');
+// 	btn.removeEventListener('click', printClick);
+// }
 
-// // console.log(a);
+// btn.addEventListener('click', printClick);
 
-// // const f = function(a) {
-// // 	console.log(a + 2);
-// // };
-// // f(2);
-
-// // f(6);
-
-// // function g(a, b) {
-// // 	return a * b;
-// // }
-// // console.log(2 * 5);
-
-// // let h = (a) => a % 3;
-
-// // let text = '22.34rem';
-
-// // console.log(Math.ceil(parseFloat(text)));
-
-// // function min(a,b) {
-// // 	return Math.max(a,b)
-// // }
-
-// // console.log(min(100,111))
-
-// // function isEven(n) {
-// // 	if (n === 0) {
-// // 		return true;
-// // 	} else if (n === 1) {
-// // 		return false;
-// // 	}
-// // 	if (n >= 0) {
-// // 		return isEven(n - 2);
+// const link = document.querySelector('a');
+// // link.addEventListener('click', (e) => {
+// // 	e.preventDefault();
+// // 	if (document.body.style.backgroundColor === 'pink') {
+// // 		document.body.style.backgroundColor = 'white';
 // // 	} else {
-// // 		return isEven(n + 2)
+// // 		document.body.style.backgroundColor = 'pink';
 // // 	}
-// // }
+// // });
 
-// // function isEven(n) {
-// // 	if (n == 0) return true;
-// // 	else if (n == 1) return false;
-// // 	else if (n < 0) return isEven(-n);
-// // 	else return isEven(n - 2);
-// // }
+// link.addEventListener('click', function() {
+// 	// console.log(this);
+// 	let test = () => {
+// 		console.log(this);
+// 	};
+// 	test();
+// });
 
-// // isEven(-20);
-// // let n = -2;
+// const btn = document.querySelector('button');
+// btn.addEventListener('click', (e) => {
+// 	console.log('Arrow');
+// 	console.log(this);
+// });
 
-// // console.log(-n);
+// btn.addEventListener('click', function(e) {
+// 	let test = function() {
+// 		console.log(this);
+// 	};
+// 	test();
+// });
 
-// // function countBs(string, letter) {
-// // 	string = string.toLowerCase();
-// // 	let total = 0;
-// // 	for (let i = 0; i < string.length; i++) {
-// // 		if (string[i] === letter) total++;
-// // 	}
-// // 	return total;
-// // }
-
-// // console.log(countBs('BBbbBBbcletsbDD','d'));
-// // console.log('HELLO');
-// // const a = '5';
-// // const b = 2;
-// // // console.log(isNan(parseInt(a)));
-
-// // console.log(isNaN(parseInt(b)));
-
-// // console.log(parseInt(a) + b)
-
-// // console.log(null == undefined)
-
-// const a = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
-
-// console.log(a);
-
-// a.push(11);
-
-// console.log(a);
-
-// a.shift();
-// console.log(a);
-// a.push('hello');
-// console.log(a);
-
-// const shit = [ [ 'hi', 'bye' ], [ 1, 2 ] ];
-// shit[1][0];
-
-// const alpha = [ 'a', 'b', 'c', 'd', 'e' ];
-
-// console.log(alpha[2]);
-
-// const nums = [ [ 1, 2, 3, 4, 5 ], [ 6, 7, 8, 9, 10 ], [ 11, 12, 13, 14, 15 ] ];
-
-// console.log(nums[0][3], nums[1][2], nums[2][0]);
-
-// nums.length;
-// let name = 'Preston';
-// const age = 31;
-// const favNum = 6;
-
-// // const person = {
-// // 	name: 'Preston',
-// // 	age: 31,
-// // 	favNum: 6,
-// // 	sayHi: function() {
-// // 		console.log('Hi');
-// // 	},
-// // 	sayHiAgain() {
-// // 		return 'Oh fuck yeah';
-// // 	}
-// // };
-
-// const math = {
-// 	times(a, b) {
-// 		return a * b;
-// 	},
-// 	add(a, b) {
-// 		return a + b;
-// 	},
-// 	sub(a, b) {
-// 		return a - b;
-// 	},
-// 	div(a, b) {
-// 		return a / b;
-// 	}
-// };
-
-// console.log(math.times(4, 4));
-
-// // console.log(person.age);
-// // person.sayHi();
-// // console.log(person.sayHiAgain());
-
-// const car = {
-// 	make: 'Mazda',
-// 	model: '3',
-// 	isUsed: false,
-// 	makeNoise() {
-// 		console.log('Vroom');
-// 	}
-// };
-// car.makeNoise();
-// console.log(car.isUsed);
-
-// const person = {
+// const obj = {
 // 	name: 'Preston',
-// 	address: {
-// 		street: '5883 Homestead Court',
-// 		city: 'Murray'
-// 	},
-// 	hobbies: [ 'music', 'soccer', 'coding', 'biking' ]
-// };
-// console.log(person.address.street);
-// for (let i = 0; i < person.hobbies.length; i++) {
-// 	console.log(person.hobbies[i]);
-// }
-
-// const book = {
-// 	title: 'Lord of the Rings',
-// 	author: {
-// 		name: 'JRR Tolken',
-// 		age: 'Old'
+// 	type: {
+// 		name: 'Larry',
+// 		type: {
+// 			name: 'Harry',
+// 			type: this
+// 		}
 // 	}
 // };
-// console.log(book.author.age);
+// console.log(obj.type);
 
-// book.title = 'The Hobbit';
-// console.log(book.title);
+// const buttons = document.querySelectorAll('button');
 
-// let a = 10;
-// let b = 'hi';
-// let c = a + 1;
-// console.log(c);
-// c = c + 1;
-// console.log(c);
+// buttons.forEach((btn) => {
+// 	btn.addEventListener('click', () => {
+// 		let clicks = parseInt(btn.dataset.clicks);
+// 		btn.dataset.clicks = clicks + 1;
+// 		btn.dataset.test = 'Testing';
+// 		btn.dataset.id = new Date();
+// 		console.log(clicks);
+// 	});
+// });
+// let test = document.querySelectorAll('.child')[1];
 
-// console.log(typeof {});
+// test.style.backgroundColor = 'red';
 
-// const d = [ 1, 2 ];
-// let e = d;
+// test.previousElementSibling.innerHTML = 'haha';
 
-// e.push(4);
-// console.log(d);
+// test.parentElement.style.backgroundColor = 'pink';
 
-// e[0] = 'hello';
-// console.log();
+// test.parentElement.parentElement.style.backgroundColor = 'orange';
 
-// e = [ 33, 33, 34 ];
-// console.log(d);
+// test.parentElement.nextElementSibling.style.backgroundColor = 'cadetblue';
 
-// let a = 10;
-// let b = 'hi';
-// let c = {
-// 	name: 'Preston',
-// 	age: 31
-// };
-// c = JSON.stringify(c);
-// console.log(`c = ${c}`);
+// const grandParent = document.querySelector('#grand-parent');
 
-// c = JSON.parse(c)
-// console.log(c)
+// grandParent.style.color = 'red';
 
-// let a = [ 1, 2 ];
-// let b = [ 1, 2 ];
-// console.log(a === b);
-let nam = 'PrESton';
+// grandParent.children[0].style.color = 'pink';
+// grandParent.children[0].nextElementSibling.style.color = 'orange';
 
-console.log(nam[0].toUpperCase() + nam.substring(1).toLowerCase());
+const form = document.querySelector('form');
+const list = document.querySelector('#list');
+// const list = document.querySelector('#list');
+const input = document.querySelector('input');
 
-const a = [ 1, 2, 3, 4, 5 ];
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
+	const div = document.createElement('div');
+	if (input.value.trim() === '') return (input.value = 'enter something valid');
+	div.innerText = input.value.trim();
+	list.append(div);
+	input.value = null;
+});
 
-// a.forEach((num) => console.log(num * 5));
-// a.forEach((num, i) => console.log(`${num} + ${i}`));
-
-// const b = a.map((num) => num * 2);
-
-// console.log(b);
-
-// console.log(b.filter((nums) => nums > 6));
-
-// console.log(a.find((num) => num > 1));
-
-// console.log(a.every((num) => num > 0));
-
-console.log(a.reduce((sum, num) => sum + num));
-
-const items = [ { priice: 24 }, { priice: 20 }, { priice: 20 }, { priice: 20 }, { priice: 20 }, { priice: 20 } ];
-
-console.log(
-	items.reduce((total, obj) => {
-		return total + obj.priice;
-	}, 0)
-);
-
-const ab = [ 1, 2, 3, 4, 5 ];
-console.log(ab.includes(3));
-
-let fname = 'Preston';
-let lname = 'Evans';
-console.log(`${fname} ${lname}`);
-
-// const user = new User('Preston', 31);
-// console.log(user.name, user.age);
-
-// function User(name, age) {
-// 	this.name = name;
-// 	this.age = age;
-// }
-class User {
-	constructor(name, age) {
-		this.name = name;
-		this.age = age;
-	}
-	printName() {
-		console.log(this.name);
-	}
-}
-const user1 = new User('Preston', 31);
-console.log(User);
-user1.printName();
-const user2 = new User('Justin', 41);
-user2.printName();
+list.addEventListener('click', (e) => {
+	e.target.remove();
+});

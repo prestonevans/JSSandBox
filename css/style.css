@@ -1,7 +1,57 @@
 * {
-  border: 0;
   padding: 0;
-  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+}
+
+#list {
+  margin-top: 50vh;
+  margin-left: 10vw;
+}
+#list div {
+  margin-bottom: 1em;
+  font-size: 2rem;
+  width: 80%;
+}
+#list div:hover {
+  color: red;
+  cursor: pointer;
+}
+
+button {
+  border: 0;
+  padding: 1em 2em;
+  border-radius: 1em;
+  color: white;
+  background-color: cadetblue;
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: 0.25s ease-in;
+}
+button:hover {
+  box-shadow: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  margin-top: 50vh;
+  margin-left: 10vw;
+}
+form * {
+  margin-bottom: 1em;
+}
+
+input {
+  outline: none;
+  border-style: solid;
+  line-height: 2rem;
+  border-radius: 1em;
 }
 
 /*# sourceMappingURL=style.css.map */

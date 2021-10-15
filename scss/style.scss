@@ -1,5 +1,55 @@
 * {
-	border: 0; 
+	// border: 0;
 	padding: 0;
-	margin: 0;
+	// margin: 0;
+}
+// [data-test] {
+// 	color: pink;
+// }
+body {
+	min-height: 100vh;
+	display: flex;
+}
+#list {
+	margin-top: 50vh;
+	margin-left: 10vw;
+	div {
+		margin-bottom: 1em;
+		font-size: 2rem;
+		width: 80%;
+		&:hover {
+			color: red;
+			cursor: pointer;
+		}
+	}
+}
+button {
+	border: 0;
+	padding: 1em 2em;
+	border-radius: 1em;
+	color: white;
+	background-color: cadetblue;
+	box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, .5);
+	cursor: pointer;
+	transition: .25s ease-in;
+	&:hover {
+		box-shadow: none;
+	}
+}
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 20%;
+	margin-top: 50vh;
+	margin-left: 10vw;
+	* {
+		margin-bottom: 1em;
+	}
+}
+input {
+	outline: none;
+	border-style: solid;
+	line-height: 2rem;
+	border-radius: 1em;
 }
